@@ -306,7 +306,15 @@ public class WindowManager: NSObject, NSWindowDelegate {
         )
         mainWindow.maxSize = maxSize
     }
-    
+
+    public func resetMaximumSize() {
+        let maxSize: NSSize = NSSize(
+            width: CGFloat.greatestFiniteMagnitude,
+            height: CGFloat.greatestFiniteMagnitude
+        )
+        mainWindow.maxSize = maxSize
+    }
+
     public func isResizable() -> Bool {
         return mainWindow.styleMask.contains(.resizable)
     }

@@ -167,6 +167,10 @@ public class WindowManagerPlugin: NSObject, FlutterPlugin {
             windowManager.setMaximumSize(args)
             result(true)
             break
+        case "resetMaximumSize":
+            windowManager.resetMaximumSize()
+            result(true)
+            break
         case "isResizable":
             result(windowManager.isResizable())
             break
