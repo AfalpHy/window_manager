@@ -461,6 +461,9 @@ void WindowManagerPlugin::HandleMethodCall(
         std::get<flutter::EncodableMap>(*method_call.arguments());
     window_manager->SetMaximumSize(args);
     result->Success(flutter::EncodableValue(true));
+  } else if (method_name.compare("resetMaximumSize") == 0) {
+    maximum_size_ = {-1, -1};
+    result->Success(flutter::EncodableValue(true));
   } else if (method_name.compare("isResizable") == 0) {
     bool value = window_manager->IsResizable();
     result->Success(flutter::EncodableValue(value));

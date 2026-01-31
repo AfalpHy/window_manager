@@ -441,6 +441,10 @@ class WindowManager {
     await _channel.invokeMethod('setMaximumSize', arguments);
   }
 
+  Future<void> resetMaximumSize() async {
+    await _channel.invokeMethod('resetMaximumSize');
+  }
+
   /// Returns `bool` - Whether the window can be manually resized by the user.
   Future<bool> isResizable() async {
     return await _channel.invokeMethod('isResizable');
