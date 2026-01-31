@@ -124,6 +124,7 @@ class WindowManager {
   void WindowManager::SetBounds(const flutter::EncodableMap& args);
   void WindowManager::SetMinimumSize(const flutter::EncodableMap& args);
   void WindowManager::SetMaximumSize(const flutter::EncodableMap& args);
+  void WindowManager::resetMaximumSize();
   bool WindowManager::IsResizable();
   void WindowManager::SetResizable(const flutter::EncodableMap& args);
   bool WindowManager::IsMinimizable();
@@ -803,6 +804,10 @@ void WindowManager::SetMaximumSize(const flutter::EncodableMap& args) {
     point.y = static_cast<LONG>(height);
     maximum_size_ = point;
   }
+}
+
+void WindowManager::resetMaximumSize() {
+  maximum_size_ = {-1, -1};
 }
 
 bool WindowManager::IsResizable() {
